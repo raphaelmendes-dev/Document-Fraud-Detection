@@ -54,6 +54,9 @@ text3. Execute:
 streamlit run app.py
 textAcesse no navegador: http://localhost:8501
 
+**Versão online (recomendada para avaliação):**
+Acesse: https://antifraude-ai102-raphael.streamlit.app
+
 ## PDFs de Teste Recomendados
 
 Use esses PDFs públicos reais de NF-e/DANFE para testar:
@@ -68,13 +71,6 @@ Use esses PDFs públicos reais de NF-e/DANFE para testar:
 → Documento simples, sem muitos itens
 
 **Dica**: Para testar fraudes, edite um PDF (mude total, data futura ou CNPJ) usando ferramentas online como Smallpdf/ILovePDF.
-
-## Deploy Online
-
-O app está hospedado gratuitamente no **Streamlit Community Cloud**:
-
-🔗 [Acessar o app online](https://antifraude-ai102-raphael.streamlit.app/)
-*(link será atualizado após deploy)*
 
 ## Se tivesse acesso ao Azure
 
