@@ -73,7 +73,7 @@ Use esses PDFs públicos reais de NF-e/DANFE para testar:
 
 O app está hospedado gratuitamente no **Streamlit Community Cloud**:
 
-🔗 [Acessar o app online](https://SEU_USUARIO-antifraude-ai102.streamlit.app)  
+🔗 [Acessar o app online](https://antifraude-ai102-raphael.streamlit.app/)
 *(link será atualizado após deploy)*
 
 ## Se tivesse acesso ao Azure
