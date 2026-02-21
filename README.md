@@ -48,9 +48,9 @@ Devido a restrições comuns no Brasil (rejeição de cartões no cadastro do Fr
 1. Clone o repositório:
 git clone (https://github.com/raphaelmendes-dev/Document-Fraud-Detection)
 cd antifraude-bootcamp-ai102
-text2. Instale as dependências:
-pip install -r requirements.txt
-text3. Execute:
+Instale as dependências:
+pip install -r requirements.txt 
+Execute:
 streamlit run app.py
 textAcesse no navegador: http://localhost:8501
 
