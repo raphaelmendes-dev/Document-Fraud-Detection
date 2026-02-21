@@ -46,7 +46,7 @@ Devido a restrições comuns no Brasil (rejeição de cartões no cadastro do Fr
 ## Como Rodar Localmente
 
 1. Clone o repositório:
-git clone https://github.com/pythondevraphael-cmyk/antifraude-bootcamp-ai102
+git clone (https://github.com/raphaelmendes-dev/Document-Fraud-Detection)
 cd antifraude-bootcamp-ai102
 text2. Instale as dependências:
 pip install -r requirements.txt
