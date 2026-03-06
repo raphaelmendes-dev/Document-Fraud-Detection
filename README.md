@@ -1,105 +1,84 @@
-# Análise Antifraude de Documentos - Simulação Azure AI Style
+[![Status](https://img.shields.io/badge/Status-MVP%20Concluído-brightgreen)](https://github.com/raphaelmendes-dev/Document-Fraud-Detection)
+[![Python](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-FF4B4B?logo=streamlit&logoColor=white)](https://antifraude-ai102-raphael.streamlit.app)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Projeto final do Bootcamp AI-102 Microsoft Azure (DIO + Microsoft)
+<div align="center">
+  <h1>Document-Fraud-Detection</h1>
+  <p><strong>Análise Antifraude de Documentos com Regras Determinísticas</strong></p>
+  <p>Extração inteligente + detecção de fraudes em NF-e, DANFE e contratos – 100% local e gratuito.</p>
 
+  <p>
+    <a href="https://antifraude-ai102-raphael.streamlit.app" target="_blank"><strong>Demo Online</strong></a> •
+    <a href="https://github.com/raphaelmendes-dev"><strong>Meu GitHub</strong></a> •
+    <a href="mailto:python.dev.raphael@gmail.com">Contato</a>
+  </p>
 
-## Objetivo do Projeto
+  <p><em>README em <a href="README.en.md">English</a></em></p>
+</div>
 
-Desenvolver uma solução automatizada para análise de documentos (notas fiscais, contratos, etc.) com foco em detecção de padrões de fraude, validação de autenticidade e consistência de dados, simulando o fluxo do **Azure AI Document Intelligence** (antigo Form Recognizer).
+## 🎯 Visão Geral
 
-**Escopo principal**: Extração de texto/tabelas + aplicação de regras antifraude customizadas.
+Solução antifraude para documentos fiscais e contratos que combina:
+- Extração de texto e tabelas estruturadas (pdfplumber + Camelot)
+- Regras determinísticas customizadas para detecção de padrões suspeitos
+- Relatório colorido com riscos, avisos e validações
 
-## Problema enfrentado com Azure
+Inspirado no Azure AI Document Intelligence, mas implementado localmente (sem dependência de nuvem paga).
 
-Devido a restrições comuns no Brasil (rejeição de cartões no cadastro do Free Tier / Azure for Students), não foi possível criar recurso Azure AI Document Intelligence.  
+## ✨ Funcionalidades
 
-**Solução alternativa local e gratuita**:
-- Extração de texto e tabelas com bibliotecas Python
-- Regras de validação customizadas
-- Interface web interativa com Streamlit
-
-## Funcionalidades Implementadas
-
-- Upload de PDF ou imagem (PNG/JPG/JPEG)
-- Extração de texto limpo (pdfplumber)
-- Extração de tabelas estruturadas (Camelot - alta precisão em DANFEs/NF-e)
+- Upload de PDF ou imagem (PNG/JPG)
+- Extração precisa de texto e tabelas (alta acurácia em layouts fiscais brasileiros)
 - Regras antifraude:
-  - Verificação de datas suspeitas (futuras ou muito antigas)
   - Validação de CNPJ (dígito verificador oficial)
-  - Detecção de repetição excessiva ou múltiplos CNPJs
-  - Verificação de soma inconsistente (itens vs total da nota)
-- Relatório colorido com riscos (alto/médio), avisos e sucessos
-- Mensagens explicativas sobre limitações e comparação com Azure real
+  - Detecção de datas suspeitas (futuras ou antigas)
+  - Verificação de soma inconsistente (itens vs total)
+  - Alerta para múltiplos CNPJs ou repetições excessivas
+- Relatório com alertas coloridos (vermelho = risco alto, amarelo = atenção)
+- Interface Streamlit intuitiva + demo online
 
-## Tecnologias Utilizadas
+Fluxo: Upload → Extração estruturada → Validações 100% determinísticas → Output seguro.
 
-- **Python 3.12+**
-- **Streamlit** – Interface web
-- **pdfplumber** – Extração de texto
-- **Camelot-py** – Extração de tabelas (melhor para layouts fiscais brasileiros)
-- **Pandas** – Manipulação de tabelas
-- **Pillow** – Suporte a imagens
-- **re / unicodedata** – Limpeza e regex
+🛠️ Stack Técnica
 
-**Sem dependência de Azure ou APIs pagas.**
+- Backend → Python 3.12+
+- UI → Streamlit
+- Extração → pdfplumber (texto), Camelot (tabelas fiscais BR)
+- Validação → re, pandas, unicodedata
+- Imagens → Pillow
 
-## Como Rodar Localmente
+🚀 Como Rodar
 
-1. Clone o repositório:
-git clone (https://github.com/raphaelmendes-dev/Document-Fraud-Detection)
-cd antifraude-bootcamp-ai102
-Instale as dependências:
-pip install -r requirements.txt 
-Execute:
-streamlit run app.py
-textAcesse no navegador: http://localhost:8501
+- Clone o repoBashgit clone https://github.com/raphaelmendes-dev/Document-Fraud-Detection.git
+- d Document-Fraud-Detection
+- Ambiente virtualBashpython -m venv venv
+- venv\Scripts\activate  # Windows
+- ou source venv/bin/activate  # Linux/Mac
+- DependênciasBashpip install -r requirements.txt
+- ExecuteBashstreamlit run app.py
 
-**Versão online (recomendada para avaliação):**
-Acesse: https://antifraude-ai102-raphael.streamlit.app
+- Acesse: http://localhost:8501
+- Demo online: https://antifraude-ai102-raphael.streamlit.app
 
-## PDFs de Teste Recomendados
+📊 Resultados & Diferenciais
 
-Use esses PDFs públicos reais de NF-e/DANFE para testar:
+- Detecção precisa de inconsistências comuns em NF-e/DANFE
+- 100% determinístico (sem alucinações de IA generativa)
+- Alta precisão em tabelas fiscais brasileiras (Camelot)
+- Escalável: pode integrar Azure AI Document Intelligence ou OCR (pytesseract) no futuro
 
-- [Nota fiscal notebook Dell (Prefeitura SP)](https://educacao.sme.prefeitura.sp.gov.br/wp-content/uploads/2019/07/nota-fiscal-notebook-dell.pdf)  
-→ Tabela de itens clara, valores, CNPJ exemplo
+🤝 Contribua ou Freelance
 
-- [Exemplo DANFE com logo](https://www.webdanfe.com.br/danfe/exemplos/danfe_com_logo.pdf)  
-→ Layout mais completo
+Contribuições bem-vindas! Fork → branch → PR.
 
-- [Nota de hospedagem (Câmara dos Deputados)](https://www.camara.leg.br/cota-parlamentar/documentos/publ/2939/2015/5641999.pdf)  
-→ Documento simples, sem muitos itens
+Soluções antifraude, extração inteligente de documentos, arquiteturas híbridas (determinístico + IA), Azure AI, Streamlit, FastAPI.
+Projetos funcionais entregues.
 
-**Dica**: Para testar fraudes, edite um PDF (mude total, data futura ou CNPJ) usando ferramentas online como Smallpdf/ILovePDF.
+Contato: raphaelmendes-dev | python.dev.raphael@gmail.com | LinkedIn
 
-## Se tivesse acesso ao Azure
 
-Usaria **Azure AI Document Intelligence** com:
-- Modelo prebuilt para NF-e / recibos
-- Modelo custom treinado com exemplos rotulados de fraudes
-- OCR avançado + detecção de layout + extração de campos chave
-- Integração com Azure Functions para análise em tempo real
+⭐ Dê uma estrela se o projeto te ajudou!
 
-## Limitações e Considerações
 
-- Em PDFs de exemplo públicos, CNPJs podem ser fictícios/inválidos intencionalmente → o código detecta corretamente como risco/atenção.
-- Tabelas complexas podem vir com pequenas imperfeições (Camelot é o melhor open-source para isso).
-- Suporte a imagens ainda limitado (OCR futuro com pytesseract).
-
-## Como Contribuir / Testar
-
-1. Fork o repositório
-2. Crie branch: `git checkout -b feature/nova-regra`
-3. Commit mudanças: `git commit -m "Adicionada regra X"`
-4. Push: `git push origin feature/nova-regra`
-5. Abra Pull Request
-
-Sugestões bem-vindas: mais regras antifraude, suporte OCR, deploy alternativo, etc.
-
-## Licença
-
-MIT License - Livre para uso, modificação e distribuição (com créditos ao autor).
-
-por Raphael | 2026 
-
-Bootcamp AI-102 | DIO + Microsoft
+Última atualização: Março 2026
