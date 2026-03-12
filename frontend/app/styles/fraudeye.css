@@ -1,0 +1,24 @@
+/* ╔══════════════════════════════════════════════╗
+   ║  styles/fraudeye.css — Rs4Machine Keyframes  ║
+   ╚══════════════════════════════════════════════╝ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1a2230; border-radius: 2px; }
+
+button { outline: none; font-family: inherit; }
+
+@keyframes doc-scan       { 0% { top: -2px; }    100% { top: 100%; } }
+@keyframes doc-scan-glow  { 0% { top: -60px; }   100% { top: 100%; } }
+@keyframes dot-blink      { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+@keyframes log-appear     { 0% { opacity: 0; transform: translateX(-4px); } 100% { opacity: 1; transform: translateX(0); } }
+@keyframes evidence-flash { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+@keyframes stagger-in     { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes shimmer-logo   { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes risk-pulse     { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,58,92,0.4); } 50% { box-shadow: 0 0 0 8px rgba(255,58,92,0); } }
+@keyframes btn-glow       { 0%, 100% { text-shadow: 0 0 8px #ff3a5c66; } 50% { text-shadow: 0 0 20px #ff3a5caa, 0 0 40px #ff3a5c44; } }
+@keyframes spin           { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

@@ -1,3 +1,4 @@
+# Python
 venv/
 .venv/
 env/
@@ -8,3 +9,17 @@ __pycache__/
 .env.local
 *.db
 *.sqlite3
+
+# Node
+node_modules/
+.next/
+/out/
+/build
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+
+# OS
+.DS_Store
+*.pem
