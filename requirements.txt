@@ -1,5 +1,13 @@
+# ── Streamlit (app.py original — intacto) ───────────────
 streamlit
+
+# ── Extração de documentos ───────────────────────────────
 pdfplumber
 camelot-py[base]
 pandas
 pillow
+
+# ── FastAPI (api.py — FraudEye bridge) ──────────────────
+fastapi
+uvicorn[standard]
+python-multipart       # obrigatório para UploadFile no FastAPI
