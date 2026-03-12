@@ -8,6 +8,7 @@
 
 <div align="center">
   <h1>🔍 FraudEye — Rs4Machine</h1>
+  <img src="fraudeye.gif" alt="FraudEye Demo" width="100%" />
   <p><strong>Forensic Vision System v3.1</strong></p>
   <p>Detecção de fraudes em NF-e com interface forense em tempo real.</p>
   <p>
