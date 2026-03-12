@@ -1,82 +1,141 @@
-[![Status](https://img.shields.io/badge/Status-MVP%20Completed-brightgreen)](https://github.com/raphaelmendes-dev/Document-Fraud-Detection)
+[![Status](https://img.shields.io/badge/Status-Live%20in%20Production-brightgreen)](https://fraudeye-frontend.vercel.app/fraud-eye)
 [![Python](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-FF4B4B?logo=streamlit&logoColor=white)](https://antifraude-ai102-raphael.streamlit.app)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white)](https://fraudeye-backend.onrender.com/docs)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://fraudeye-frontend.vercel.app/fraud-eye)
+[![Vercel](https://img.shields.io/badge/Vercel-Frontend-black?logo=vercel&logoColor=white)](https://fraudeye-frontend.vercel.app/fraud-eye)
+[![Render](https://img.shields.io/badge/Render-Backend-46E3B7?logo=render&logoColor=white)](https://fraudeye-backend.onrender.com/docs)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <div align="center">
-  <h1>Document Fraud Detection</h1>
-  <p><strong>Document Anti-Fraud Analysis with Deterministic Rules</strong></p>
-  <p>Intelligent extraction + fraud pattern detection in invoices, contracts – fully local & free.</p>
-
+  <h1>🔍 FraudEye — Rs4Machine</h1>
+  <p><strong>Forensic Vision System v3.1</strong></p>
+  <p>Real-time fraud detection for Brazilian fiscal documents (NF-e).</p>
   <p>
-    <a href="https://antifraude-ai102-raphael.streamlit.app" target="_blank"><strong>Live Demo</strong></a> •
-    <a href="https://github.com/raphaelmendes-dev"><strong>My GitHub</strong></a> •
+    <a href="https://fraudeye-frontend.vercel.app/fraud-eye" target="_blank"><strong>🚀 Live App</strong></a> •
+    <a href="https://fraudeye-backend.onrender.com/docs" target="_blank"><strong>📡 API Docs</strong></a> •
+    <a href="https://github.com/raphaelmendes-dev"><strong>GitHub</strong></a> •
     <a href="mailto:python.dev.raphael@gmail.com">Contact</a>
   </p>
-
-  <p><em>README in <a href="README.md">Português</a></em></p>
+  <p><em>README em <a href="README.md">Português</a></em></p>
 </div>
+
+---
 
 ## 🎯 Overview
 
-Anti-fraud solution for fiscal documents and contracts combining:
-- Structured text & table extraction (pdfplumber + Camelot)
-- Custom deterministic rules for suspicious pattern detection
-- Color-coded risk report
+**FraudEye** is a forensic analysis system for Brazilian fiscal documents (NF-e / DANFE). It combines intelligent PDF extraction with deterministic validation rules and a mission-critical interface developed by **Rs4Machine**.
 
-Azure AI Document Intelligence inspired, but 100% local implementation (no paid cloud).
+- 🔎 NF-e forensic analysis in seconds
+- 🧠 Deterministic rules (no generative AI hallucinations)
+- 📊 Real-time visual Risk Score
+- 🖥️ Terminal-style interface with evidence panel
+
+---
+
+## 🏗️ Architecture
+
+```
+Document-Fraud-Detection/
+├── frontend/                  → Next.js 16 (Vercel)
+│   └── app/
+│       ├── fraud-eye/
+│       │   └── page.jsx       → Main orchestrator
+│       ├── components/FraudEye/
+│       │   ├── RiskMeter.jsx
+│       │   ├── DropZone.jsx
+│       │   ├── EvidenceCard.jsx
+│       │   ├── AuditTerminal.jsx
+│       │   ├── MetricPills.jsx
+│       │   └── VerdictPanel.jsx
+│       ├── hooks/
+│       │   └── useFraudAnalysis.js
+│       ├── constants/
+│       │   └── tokens.js      → Rs4Machine Design DNA
+│       └── styles/
+│           └── fraudeye.css
+└── backend/                   → Python + FastAPI (Render)
+    ├── api.py                 → Main endpoints
+    ├── requirements.txt
+    └── core/
+        ├── validators.py      → Anti-fraud rules
+        └── scorer.py          → Risk Score calculation
+```
+
+---
 
 ## ✨ Features
 
-- Upload PDF or image (PNG/JPG)
-- Accurate text and table extraction (optimized for Brazilian fiscal layouts)
-- Fraud detection rules:
-  - CNPJ validation (official check digit)
-  - Suspicious dates (future or very old)
-  - Item sum vs total inconsistency
-  - Multiple CNPJs or excessive repetition alerts
-- Color-coded report (red = high risk, yellow = attention)
-- Intuitive Streamlit interface + live demo
+- PDF upload (NF-e / DANFE / Contracts)
+- Text extraction with pdfplumber
+- Deterministic validations:
+  - CNPJ/CPF — official check digit
+  - Retroactive or suspicious dates
+  - Missing NF-e key (44 digits)
+  - Sum inconsistency (items vs total)
+- Risk Score 0–100 with animated gauge
+- Evidence Panel with severity levels (critical / high / medium / low)
+- Real-time Audit Terminal logs
+- Automatic forensic report
 
-Flow: Upload → Structured extraction → Deterministic validations → Secure output.
+---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-- Backend → Python 3.12+
-- UI → Streamlit
-- Extraction → pdfplumber (text), Camelot (tables)
-- Validation → re, pandas, unicodedata
-- Images → Pillow
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 16 + React |
+| Styling | CSS-in-JS + Rs4Machine Design Tokens |
+| Backend | Python 3.12+ + FastAPI + uvicorn |
+| Extraction | pdfplumber |
+| Validation | re, unicodedata, pandas |
+| Frontend Deploy | Vercel |
+| Backend Deploy | Render |
 
-🚀 Quick Start
+---
 
-- CloneBashgit clone https://github.com/raphaelmendes-dev/Document-Fraud-Detection.git
-- cd Document-Fraud-Detection
-- Virtual envBashpython -m venv venv
-- venv\Scripts\activate  # Windows
-- or source venv/bin/activate # Linux
-- InstallBashpip install -r requirements.txt
-- RunBashstreamlit run app.py
+## 🚀 Running Locally
 
-- Access: http://localhost:8501
+### Backend
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+uvicorn api:app --reload
+```
+API available at: `http://localhost:8000/docs`
 
-- Live Demo: https://antifraude-ai102-raphael.streamlit.app
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+App available at: `http://localhost:3000/fraud-eye`
 
+> ⚠️ Run both terminals simultaneously.
 
-📊 Results & Differentiators
+---
 
-- Accurate detection of common NF-e/DANFE inconsistencies
-- 100% deterministic logic (no generative AI hallucinations)
-- High precision on Brazilian fiscal tables (Camelot)
-- Ready for scaling: Azure AI integration or OCR (pytesseract) possible
+## 📡 API Endpoints
 
-🤝 Contribute
-Contributions welcome! Fork → branch → PR.
+| Method | Route | Description |
+|---|---|---|
+| GET | `/` | Health check |
+| GET | `/health` | API status |
+| POST | `/analyze` | PDF document analysis |
 
-Anti-fraud systems, document intelligence, hybrid architectures, Azure AI, Streamlit, FastAPI.
-Delivered functional projects.
+---
 
-Contact: raphaelmendes-dev | python.dev.raphael@gmail.com | LinkedIn
+## 🤝 Contact
 
+**Rs4Machine** — Autonomous Agents Corporation  
+CEO: Raphael Mendes  
+📧 python.dev.raphael@gmail.com  
+🔗 [github.com/raphaelmendes-dev](https://github.com/raphaelmendes-dev)
 
-⭐ Star if you like it!
+---
+
+⭐ Star this repo if it helped you!
+
+*Last updated: March 2026*
