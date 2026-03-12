@@ -27,4 +27,4 @@ export const SEVERITY_COLOR = {
   low:      "#00e57a",
 };
 
-export const API_URL = "http://localhost:8000";
+export const API_URL = "https://fraudeye-backend.onrender.com";
