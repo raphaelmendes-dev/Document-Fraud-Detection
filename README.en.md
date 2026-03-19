@@ -7,6 +7,7 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <div align="center">
+  <img src="https://raw.githubusercontent.com/raphaelmendes-dev/FinAI-Assistente-Financeiro/main/assets/Rs4Machine.png" width="380" />
   <h1>🔍 FraudEye — Rs4Machine</h1>
   <p><strong>Forensic Vision System v3.1</strong></p>
   <p>Real-time fraud detection for Brazilian fiscal documents (NF-e).</p>
